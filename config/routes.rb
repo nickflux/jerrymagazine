@@ -28,7 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   
   # remove this when new homepage ready
-  #map.root :controller => "public"
+  map.root :controller => "public"
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
