@@ -1,0 +1,36 @@
+<div>
+  <h1><%= @edition.title %></h1>
+  <%= @edition.description %>
+</div>
+<div class="editions_works" id="editions_poetry">
+  <h2>Poetry</h2>
+  <ul>
+  <% @poems.each do |poem| %>
+    <li><%= link_to(poem.title, work_path(poem)) %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="editions_works" id="editions_proses">
+  <h2>Prose</h2>
+  <ul>
+  <% @proses.each do |prose| %>
+    <li><%= link_to(prose.title, work_path(prose)) %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="editions_works" id="editions_reviews">
+  <h2>Reviews</h2>
+  <ul>
+  <% @reviews.each do |review| %>
+    <li><%= link_to(review.title, work_path(review)) %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="editions_works" id="editions_contributors">
+  <h2>Contributors</h2>
+  <ul>
+  <% @edition.contributors.each do |contributor| %>
+    <li><%= contributor.get_fullname %></li>
+  <% end %>
+  </ul>
+</div>

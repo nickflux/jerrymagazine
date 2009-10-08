@@ -1,0 +1,24 @@
+<h1>Listing links</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Link url</th>
+    <th>Description</th>
+  </tr>
+
+<% @links.each do |link| %>
+  <tr>
+    <td><%=h link.title %></td>
+    <td><%=h link.link_url %></td>
+    <td><%=h link.description %></td>
+    <td><%= link_to 'Show', links_admin_path(:id=> link, :action => 'show') %></td>
+    <td><%= link_to 'Edit', links_admin_path(:id=> link, :action => 'edit') %></td>
+    <td><%= link_to 'Destroy', links_admin_path(:id=> link, :action => 'destroy'), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New link', links_admin_path(:action => 'new') %>

@@ -1,0 +1,51 @@
+* {
+padding: 0;
+margin: 0;
+}
+html {
+height: 100%;
+}
+body {
+background-color: #F8FFE0;
+font-family: Tahoma, Geneva, sans-serif;
+color: #000;
+}
+/* IDS */
+#wrapper {
+width: 820px;
+margin: 0 auto;
+text-align: left;
+}
+#header {
+text-align: center;
+border-bottom: 2px solid rgb(51,0,0);
+}
+#divider {
+height: 5px;
+background-color: rgb(51,0,0);
+margin-top: 5px;
+}
+#flash {
+margin-top: 30px;
+text-align: center;
+font-size: 25px;
+}
+#main {
+padding: 0px 20px;
+}
+#main p {
+margin-bottom: 10px;
+}
+#main h2 {
+margin: 20px 0px;
+font-weight: normal;
+}
+
+#footer {
+height: 30px;
+}
+/* CLASSES */
+.highlight {
+color: rgb(51,0,0);
+font-size: 14px;
+}

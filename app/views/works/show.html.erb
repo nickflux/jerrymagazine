@@ -1,0 +1,31 @@
+<p>
+  <b>Type:</b>
+  <%=h @work.work_type %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @work.title %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%=h @work.abstract %>
+</p>
+
+<p>
+  <b>Work content:</b>
+  <%=h @work.work_content %>
+</p>
+
+<p>
+  <b>Edition:</b>
+  <%=h @work.edition.edition_no.to_s%>: <%=h @work.edition.title %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @work.user.get_fullname %>
+</p>
+
+<%= link_to 'Back', works_path %>

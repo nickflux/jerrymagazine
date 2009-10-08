@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Jerry Magazine</title>
+  <%= stylesheet_link_tag 'admin' %>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+<h1>Jerry Admin</h1>
+<div id="main_menu">
+  <ul>
+    <li><%= link_to 'admin home', :controller => 'admin' %></li>
+    <li><%= link_to 'users', :controller => 'users' %></li>
+    <li><%= link_to 'editions', editions_admin_path %></li>
+    <li><%= link_to 'works', works_admin_path %></li>
+    <li><%= link_to 'links', links_admin_path %></li>
+    <li><%= link_to 'site home', '/' %></li>
+  </ul>
+</div>
+<br clear="both"/>
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield %>
+
+</body>
+</html>

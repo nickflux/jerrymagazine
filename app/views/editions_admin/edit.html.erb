@@ -1,0 +1,28 @@
+<h1>Editing edition</h1>
+
+<% form_for :edition, @edition, :url => {:action => 'update'} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :edition_no %><br />
+    <%= f.text_field :edition_no %>
+  </p>
+  <p>
+    <%= f.label :publish_date %><br />
+    <%= f.date_select :publish_date %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', editions_admin_path(:id=> @edition, :action => 'show') %> |
+<%= link_to 'Back', editions_admin_path %>
