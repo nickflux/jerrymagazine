@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_many :works
+  
+  has_friendly_id :lastname, :use_slug => true
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

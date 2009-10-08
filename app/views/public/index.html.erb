@@ -30,7 +30,7 @@
   <h2>Contributors</h2>
   <ul>
   <% @edition.contributors.each do |contributor| %>
-    <li><%= contributor.get_fullname %></li>
+    <li><%= link_to(contributor.get_fullname, contributor_path(contributor)) %></li>
   <% end %>
   </ul>
 </div>

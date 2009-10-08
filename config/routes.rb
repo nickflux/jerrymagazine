@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :works
   
   map.resources :editions
+  
+  map.resources :contributors
 
   map.archives  '/archives/:action', :controller => 'editions'
 
