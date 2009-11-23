@@ -1,5 +1,9 @@
 class PublicController < ApplicationController
 
+  def front_cover
+    render :layout => 'front_cover'
+  end
+  
   def index
     @edition  = Edition.first(:order => 'publish_date DESC')
     @poems    = @edition.works.all(:conditions => "work_type = 'poetry'")
