@@ -62,7 +62,7 @@ class EditionsAdminController < AdminController
     respond_to do |format|
       if @edition.update_attributes(params[:edition])
         flash[:notice] = 'Edition was successfully updated.'
-        format.html { redirect_to(@edition) }
+        format.html { redirect_to(editions_admin_path(:action => 'show', :id => @edition)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

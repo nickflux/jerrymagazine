@@ -17,7 +17,10 @@
   <b>Writer Type:</b>
   <%=h @user.writer_type %>
 </p>
-
+<p>
+  <b>Bio:</b>
+  <%=h @user.bio %>
+</p>
 
 <%= link_to 'Edit', users_admin_path(:id=> @user, :action => 'edit') %> |
 <%= link_to 'Back', users_admin_path %>

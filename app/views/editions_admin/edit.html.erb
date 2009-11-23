@@ -1,6 +1,6 @@
 <h1>Editing edition</h1>
 
-<% form_for :edition, @edition, :url => {:action => 'update'} do |f| %>
+<% form_for :edition, @edition, :url => {:action => 'update', :id => @edition.id} do |f| %>
   <%= f.error_messages %>
 
   <p>
