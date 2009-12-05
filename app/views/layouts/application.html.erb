@@ -9,11 +9,11 @@
   <body>
     <div id="wrapper">
       <div id="header">
-        <img src="/images/Jerry-Logo-2.png" id="main_logo" />
+        <%= link_to(image_tag("Jerry-Logo-2.png"), home_path, :id => "main_logo") %>
       </div>
       <div id="main_nav">
         <ul>
-          <li><%=link_to('home', root_path) %></li>
+          <li><%=link_to('home', home_path) %></li>
           <li><%=link_to('about us', about_us_path) %></li>
           <li><%=link_to('archives', archives_path) %></li>
           <li><%=link_to('submit', submit_page_path) %></li>

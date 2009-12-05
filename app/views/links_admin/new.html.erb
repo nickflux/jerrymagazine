@@ -8,6 +8,10 @@
     <%= f.text_field :title %>
   </p>
   <p>
+    <%= f.label :group %><br />
+    <%= f.select :group, @link_group_opts %>
+  </p>
+  <p>
     <%= f.label :link_url %><br />
     <%= f.text_field :link_url %>
   </p>

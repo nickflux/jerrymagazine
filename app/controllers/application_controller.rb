@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     @yn_opts          = [["yes", true], ["no", false]]
     @user_group_opts  = ["writer", "admin"]
     @work_type_opts   = ["poetry", "prose", "review"]
+    @link_group_opts  = ['friends', 'bastards']
     
     super(*params)
   end

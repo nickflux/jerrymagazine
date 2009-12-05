@@ -1,11 +1,15 @@
 <h1>Editing link</h1>
 
-<% form_for :link, @link, :url => {:action => 'update'} do |f| %>
+<% form_for :link, @link, :url => {:action => 'update', :id => @link.id} do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :group %><br />
+    <%= f.select :group, @link_group_opts %>
   </p>
   <p>
     <%= f.label :link_url %><br />

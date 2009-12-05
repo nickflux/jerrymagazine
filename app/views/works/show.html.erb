@@ -1,31 +1,13 @@
-<p>
-  <b>Type:</b>
-  <%=h @work.work_type %>
-</p>
-
-<p>
-  <b>Title:</b>
+<h2>
   <%=h @work.title %>
+</h2>
+
+<p class="name">
+  by <%=h @work.user.get_fullname %>
 </p>
 
 <p>
-  <b>Abstract:</b>
-  <%=white_list @work.abstract %>
-</p>
-
-<p>
-  <b>Work content:</b>
   <%=white_list @work.work_content %>
-</p>
-
-<p>
-  <b>Edition:</b>
-  <%=h @work.edition.edition_no.to_s%>: <%=h @work.edition.title %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @work.user.get_fullname %>
 </p>
 
 <%= link_to 'Back', works_path %>

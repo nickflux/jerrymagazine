@@ -1,4 +1,5 @@
 class LinksAdminController < AdminController
+  
   # GET /admin/links
   # GET /admin/links.xml
   def index
@@ -82,4 +83,5 @@ class LinksAdminController < AdminController
       format.xml  { head :ok }
     end
   end
+  
 end

@@ -17,6 +17,12 @@ h1, h2 {
 font-weight: normal;
 font-size: 22px;
 }
+a {
+color: #000;
+}
+a:hover {
+color: red;
+}
 a img {
 border: none;
 }
@@ -90,4 +96,7 @@ font-size: 14px;
 float: left;
 width: 400px;
 height: 200px;
+}
+.name {
+font-style: italic;
 }

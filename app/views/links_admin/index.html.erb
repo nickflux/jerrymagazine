@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Group</th>
     <th>Link url</th>
     <th>Description</th>
   </tr>
@@ -10,6 +11,7 @@
 <% @links.each do |link| %>
   <tr>
     <td><%=h link.title %></td>
+    <td><%=h link.group %></td>
     <td><%=h link.link_url %></td>
     <td><%=h link.description %></td>
     <td><%= link_to 'Show', links_admin_path(:id=> link, :action => 'show') %></td>

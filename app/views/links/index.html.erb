@@ -1,17 +1,15 @@
-<h1>Listing links</h1>
+<h1>Links</h1>
 
+
+<% @links.each do |link_group, links| %>
+<h2><%= link_group %></h2>
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Link url</th>
-    <th>Description</th>
-  </tr>
-
-<% @links.each do |link| %>
-  <tr>
-    <td><%=h link.title %></td>
-    <td><%=h link.link_url %></td>
-    <td><%=h link.description %></td>
-  </tr>
-<% end %>
+  <% links.each do |link| %>
+    <tr>
+      <td><%=link_to(h(link.title), link.link_url) %></td>
+    </tr>
+  <% end %>
 </table>
+
+
+<% end %>

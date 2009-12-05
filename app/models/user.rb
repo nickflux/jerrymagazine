@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
   
   has_friendly_id :lastname, :use_slug => true
 
-  validates_presence_of     :login
-  validates_length_of       :login,    :within => 3..40
-  validates_uniqueness_of   :login
-  validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message
+  #validates_presence_of     :login
+  validates_length_of       :login,    :within => 3..40, :allow_blank => true
+  validates_uniqueness_of   :login, :allow_blank => true
+  validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message, :allow_blank => true
 
   validates_presence_of     :firstname
   validates_format_of       :firstname,     :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
@@ -22,10 +22,10 @@ class User < ActiveRecord::Base
   validates_format_of       :lastname,     :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
   validates_length_of       :lastname,     :maximum => 100
 
-  validates_presence_of     :email
-  validates_length_of       :email,    :within => 6..100 #r@a.wk
-  validates_uniqueness_of   :email
-  validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
+  #validates_presence_of     :email
+  validates_length_of       :email,    :within => 6..100, :allow_blank => true #r@a.wk
+  validates_uniqueness_of   :email, :allow_blank => true
+  validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message, :allow_blank => true
 
   
 
