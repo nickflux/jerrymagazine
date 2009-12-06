@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091205120738) do
+ActiveRecord::Schema.define(:version => 20091206191848) do
 
   create_table "editions", :force => true do |t|
     t.string   "title"
@@ -56,8 +56,6 @@ ActiveRecord::Schema.define(:version => 20091205120738) do
     t.datetime "remember_token_expires_at"
     t.text     "bio"
   end
-
-  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
   create_table "works", :force => true do |t|
     t.string   "work_type"
