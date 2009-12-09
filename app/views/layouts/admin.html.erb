@@ -10,6 +10,7 @@
   <%= include_tiny_mce_if_needed %>
 </head>
 <body>
+<div id="wrapper">
 <h1>Jerry Admin</h1>
 <div id="main_menu">
   <ul>
@@ -25,6 +26,6 @@
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield %>
-
+</div>
 </body>
 </html>

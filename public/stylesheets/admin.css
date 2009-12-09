@@ -11,6 +11,11 @@ padding: 2px;
 ul {
 list-style-type: none;
 }
+#wrapper {
+width: 1100px;
+margin: 0 auto;
+text-align: left;
+}
 #main_menu li {
 float: left;
 margin: 4px;
