@@ -6,8 +6,8 @@ class PublicController < ApplicationController
   
   def index
     @edition  = Edition.first(:order => 'publish_date DESC')
-    @poems    = @edition.works.all(:conditions => "work_type = 'poetry'")
-    @proses   = @edition.works.all(:conditions => "work_type = 'prose'")
+    @poets    = @edition.contributors.all(:conditions => ["work_type = ?", 'poetry'])
+    @prosers  = @edition.contributors.all(:conditions => ["work_type = ?", 'prose'])
     @reviews  = @edition.works.all(:conditions => "work_type = 'review'")
   end
   

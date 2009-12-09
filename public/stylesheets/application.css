@@ -13,6 +13,9 @@ color: #000;
 ul {
 list-style-type: none;
 }
+h1 {
+margin-bottom: 20px;
+}
 h1, h2 {
 font-weight: normal;
 font-size: 22px;
@@ -98,5 +101,12 @@ width: 400px;
 height: 200px;
 }
 .name {
+font-style: italic;
+}
+li.first_level {
+padding-bottom: 10px;
+}
+ul.second_level li {
+padding-left: 10px;
 font-style: italic;
 }

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_many :works
+  default_scope :order => 'lastname, firstname'
   
   has_friendly_id :lastname, :use_slug => true
 
@@ -58,6 +59,10 @@ class User < ActiveRecord::Base
   
   def get_fullname
     return "#{firstname} #{lastname}"
+  end
+  
+  def get_edition_works(edition_id, work_type)
+    works.all(:conditions => ["edition_id = ? AND work_type = ?", edition_id, work_type])
   end
 
   protected
