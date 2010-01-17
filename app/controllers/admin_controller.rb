@@ -7,7 +7,7 @@ class AdminController < ApplicationController
     :theme_advanced_toolbar_align => "left",
     :theme_advanced_resizing => true,
     :theme_advanced_resize_horizontal => false,
-    :theme_advanced_buttons1 => %w{formatselect bold italic underline justifyleft justifycenter justifyright bullist numlist separator link unlink code undo redo},
+    :theme_advanced_buttons1 => %w{formatselect bold italic underline justifyleft justifycenter justifyright bullist numlist separator link unlink code indent outdent},
     :theme_advanced_buttons2 => [],
     :theme_advanced_buttons3 => [],
     :extended_valid_elements => "a[name|href|target|title|onclick]"

@@ -20,7 +20,7 @@
   <% @prosers.each do |proser| %>
   <li class="first_level"><%= proser.get_fullname %><ul class="second_level">
     <% proser.get_edition_works(@edition.id, 'prose').each do |prose| %>
-      <li><%= link_to(prose.title, work_path(proser)) %></li>
+      <li><%= link_to(prose.title, work_path(prose)) %></li>
     <% end %>
   </ul></li>
   <% end %>

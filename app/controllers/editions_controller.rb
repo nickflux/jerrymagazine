@@ -13,10 +13,13 @@ class EditionsController < ApplicationController
   # GET /editions/1
   # GET /editions/1.xml
   def show
-    @edition = Edition.find(params[:id])
+    @edition  = Edition.find(params[:id], :order => 'publish_date DESC')
+    @poets    = @edition.contributors.all(:conditions => ["work_type = ?", 'poetry'])
+    @prosers  = @edition.contributors.all(:conditions => ["work_type = ?", 'prose'])
+    @reviews  = @edition.works.all(:conditions => "work_type = 'review'")
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :template => 'public/index'}
       format.xml  { render :xml => @edition }
     end
   end

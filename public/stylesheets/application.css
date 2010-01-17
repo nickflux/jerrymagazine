@@ -69,6 +69,7 @@ padding: 2px;
 width: 800px;
 float: left;
 padding: 0px 20px;
+margin-bottom: 20px;
 }
 #main p {
 margin-bottom: 10px;
@@ -98,7 +99,8 @@ font-size: 14px;
 .editions_works {
 float: left;
 width: 400px;
-height: 200px;
+
+
 }
 .name {
 font-style: italic;
