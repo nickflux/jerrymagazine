@@ -46,7 +46,7 @@ width: 750px;
 #header {
 text-align: center;
 border-bottom: 1px solid rgb(51,0,0);
-margin-bottom: 30px;
+margin-bottom: 10px;
 }
 #divider {
 height: 5px;
@@ -59,15 +59,15 @@ text-align: center;
 font-size: 25px;
 }
 #main_nav {
-width: 110px;
 float: left;
+margin-bottom: 5px;
 }
 #main_nav li {
-padding: 2px;
+float: left;
+padding: 5px;
 }
 #main {
-width: 800px;
-float: left;
+width: 940px;
 padding: 0px 20px;
 margin-bottom: 20px;
 }
@@ -82,6 +82,7 @@ font-weight: normal;
 #footer {
 height: 40px;
 clear: both;
+margin-top: 20px;
 text-align: right;
 font-family: helvetica;
 font-weight: bold;
@@ -98,9 +99,8 @@ font-size: 14px;
 }
 .editions_works {
 float: left;
-width: 400px;
-
-
+width: 440px;
+padding-right: 20px;
 }
 .name {
 font-style: italic;
