@@ -65,6 +65,8 @@ margin-bottom: 5px;
 #main_nav li {
 float: left;
 padding: 5px;
+padding-right: 125px;
+text-transform: uppercase;
 }
 #main {
 width: 940px;
@@ -111,4 +113,7 @@ padding-bottom: 10px;
 ul.second_level li {
 padding-left: 10px;
 font-style: italic;
+}
+.first_line_indent {
+text-indent: 1.27cm;
 }

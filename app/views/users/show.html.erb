@@ -19,7 +19,7 @@
 </p>
 <p>
   <b>Bio:</b>
-  <%=h @user.bio %>
+  <%=white_list @user.bio %>
 </p>
 
 <%= link_to 'Edit', users_admin_path(:id=> @user, :action => 'edit') %> |

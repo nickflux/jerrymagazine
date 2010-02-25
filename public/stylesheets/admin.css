@@ -20,3 +20,7 @@ text-align: left;
 float: left;
 margin: 4px;
 }
+
+.first_line_indent {
+text-indent: 1.27cm;
+}
