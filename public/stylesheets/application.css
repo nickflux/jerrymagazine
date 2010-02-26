@@ -60,12 +60,12 @@ font-size: 25px;
 }
 #main_nav {
 float: left;
-margin-bottom: 5px;
+padding-left: 20px;
+margin-bottom: 15px;
 }
 #main_nav li {
 float: left;
-padding: 5px;
-padding-right: 125px;
+padding: 5px 125px 5px 0;
 text-transform: uppercase;
 }
 #main {
