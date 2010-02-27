@@ -1,6 +1,11 @@
 <h2>
   <%=white_list @work.title %>
 </h2>
+<%- if !@work.epigraph.blank? -%>
+  <p class="epigraph">
+    <%=white_list @work.epigraph %>
+  </p>
+<%- end -%>
 
 <p class="name">
   by <%=h @work.user.get_fullname %>
