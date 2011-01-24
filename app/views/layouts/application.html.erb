@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>JERRY MAGAZINE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <%= stylesheet_link_tag 'application' %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <%= link_to(image_tag("Jerry-Logo-2.png"), home_path, :id => "main_logo") %>
+      </div>
+      <div id="main_nav">
+        <ul>
+          <li><%=link_to('home', home_path) %></li>
+          <li><%=link_to('about us', about_us_path) %></li>
+          <li><%=link_to('archives', archives_path) %></li>
+          <li><%=link_to('submit', submit_page_path) %></li>
+          <li><%=link_to('links', links_path) %></li>
+        </ul>
+      </div>
+      <br clear="both"/>
+      <div id="main">
+        <%= yield %>
+      </div>
+      <br clear="both"/>
+      <div id="footer">
+        <div>made by <a href="http://www.fluxequalsrad.com">Flux=Rad</a></div>
+      </div>
+    </div>
+  </body>
+</html>

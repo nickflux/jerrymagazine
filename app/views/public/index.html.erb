@@ -1,0 +1,44 @@
+<div>
+  <h1><%= @edition.title %></h1>
+  <%= link_to "Editors' Letter", "/editors_letter" %>
+</div>
+<div class="editions_works" id="editions_poetry">
+  <h2>Poetry</h2>
+  <ul>
+  <% @poets.each do |poet| %>
+  <li class="first_level"><%= poet.get_fullname %><ul class="second_level">
+    <% poet.get_edition_works(@edition.id, 'poetry').each do |poem| %>
+      <li><%= link_to(poem.title, work_path(poem)) %></li>
+    <% end %>
+  </ul></li>
+  <% end %>
+  </ul>
+</div>
+<div class="editions_works" id="editions_proses">
+  <h2>Prose</h2>
+  <ul>
+  <% @prosers.each do |proser| %>
+  <li class="first_level"><%= proser.get_fullname %><ul class="second_level">
+    <% proser.get_edition_works(@edition.id, 'prose').each do |prose| %>
+      <li><%= link_to(prose.title, work_path(prose)) %></li>
+    <% end %>
+  </ul></li>
+  <% end %>
+  </ul>
+</div>
+<div class="editions_works" id="editions_reviews">
+  <h2>Reviews</h2>
+  <ul>
+  <% @reviews.each do |review| %>
+    <li><%= link_to(review.title, work_path(review)) %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="editions_works" id="editions_contributors">
+  <h2>Contributors</h2>
+  <ul>
+  <% @edition.contributors.each do |contributor| %>
+    <li><%= link_to(contributor.get_fullname, contributor_path(contributor)) %></li>
+  <% end %>
+  </ul>
+</div>

@@ -1,0 +1,12 @@
+<% @links.each do |link_group, links| %>
+<h2><%= link_group %></h2>
+<table>
+  <% links.each do |link| %>
+    <tr>
+      <td><%=link_to(h(link.title), link.link_url) %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<% end %>

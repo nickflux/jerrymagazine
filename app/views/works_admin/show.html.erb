@@ -1,0 +1,38 @@
+<p>
+  <b>Type:</b>
+  <%=h @work.work_type %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @work.title %>
+</p>
+
+<p>
+  <b>Epigraph:</b>
+  <%=h @work.epigraph %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%=white_list @work.abstract %>
+</p>
+
+<p>
+  <b>Work content:</b>
+  <%=white_list @work.work_content %>
+</p>
+
+<p>
+  <b>Edition:</b>
+  <%=h @work.edition.edition_no.to_s%>: <%=h @work.edition.title %>
+</p>
+
+<p>
+  <b>Writer:</b>
+  <%=h @work.user.get_fullname %>
+</p>
+
+
+<%= link_to 'Edit', works_admin_path(:id=> @work, :action => 'edit') %> |
+<%= link_to 'Back', works_admin_path %>

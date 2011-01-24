@@ -1,0 +1,18 @@
+<h1>All Users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Group</th>
+    <th>Writer Type</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.get_fullname %></td>
+    <td><%=h user.group %></td>
+    <td><%=h user.writer_type %></td>
+    <td><%= link_to 'Show', users_admin_path(:id=> user, :action => 'show') %></td>
+  </tr>
+<% end %>
+</table>

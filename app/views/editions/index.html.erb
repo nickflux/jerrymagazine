@@ -1,0 +1,9 @@
+<h2>Editions</h2>
+
+<table>
+<% @editions.each do |edition| %>
+  <tr>
+    <td><%= link_to h(edition.title), edition %></td>
+  </tr>
+<% end %>
+</table>

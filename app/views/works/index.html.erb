@@ -1,0 +1,24 @@
+<h1>Listing works</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Title</th>
+    <th>Abstract</th>
+    <th>Work content</th>
+    <th>Edition</th>
+    <th>Writer</th>
+  </tr>
+
+<% @works.each do |work| %>
+  <tr>
+    <td><%=h work.work_type %></td>
+    <td><%=h work.title %></td>
+    <td><%=truncate(h(work.abstract)) %></td>
+    <td><%=truncate(h(work.work_content)) %></td>
+    <td><%=h work.edition.edition_no.to_s%>: <%=h work.edition.title %></td>
+    <td><%=h work.user.get_fullname %></td>
+    <td><%= link_to 'Show', work %></td>
+  </tr>
+<% end %>
+</table>

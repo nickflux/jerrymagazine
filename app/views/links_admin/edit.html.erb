@@ -1,0 +1,28 @@
+<h1>Editing link</h1>
+
+<% form_for :link, @link, :url => {:action => 'update', :id => @link.id} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :group %><br />
+    <%= f.select :group, @link_group_opts %>
+  </p>
+  <p>
+    <%= f.label :link_url %><br />
+    <%= f.text_field :link_url %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', links_admin_path(:id=> @link, :action => 'show') %> |
+<%= link_to 'Back', links_admin_path %>

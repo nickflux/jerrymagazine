@@ -1,0 +1,28 @@
+<h1>Listing editions</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Edition no</th>
+    <th>Publish date</th>
+    <th>Published</th>
+    <th>Description</th>
+  </tr>
+
+<% @editions.each do |edition| %>
+  <tr>
+    <td><%=h edition.title %></td>
+    <td><%=h edition.edition_no %></td>
+    <td><%=h edition.publish_date %></td>
+    <td><%=if edition.published then "yes" end %></td>
+    <td><%=h edition.description %></td>
+    <td><%= link_to 'Show', editions_admin_path(:id=> edition, :action => 'show') %></td>
+    <td><%= link_to 'Edit', editions_admin_path(:id=> edition, :action => 'edit') %></td>
+    <td><%= link_to 'Destroy', editions_admin_path(:id=> edition, :action => 'destroy'), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New edition', editions_admin_path(:action => 'new') %>

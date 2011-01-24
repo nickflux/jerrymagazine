@@ -1,0 +1,26 @@
+<p>
+  <b>First Name:</b>
+  <%=h @user.firstname %>
+</p>
+
+<p>
+  <b>Last Name:</b>
+  <%=h @user.lastname %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%=h @user.group %>
+</p>
+
+<p>
+  <b>Writer Type:</b>
+  <%=h @user.writer_type %>
+</p>
+<p>
+  <b>Bio:</b>
+  <%=white_list @user.bio %>
+</p>
+
+<%= link_to 'Edit', users_admin_path(:id=> @user, :action => 'edit') %> |
+<%= link_to 'Back', users_admin_path %>

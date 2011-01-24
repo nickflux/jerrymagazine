@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @link.title %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%=h @link.group %>
+</p>
+
+<p>
+  <b>Link url:</b>
+  <%=h @link.link_url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @link.description %>
+</p>
+
+
+<%= link_to 'Edit', links_admin_path(:id=> @link, :action => 'edit') %> |
+<%= link_to 'Back', links_admin_path %>
