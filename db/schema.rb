@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110124102414) do
+ActiveRecord::Schema.define(:version => 20110124133739) do
 
   create_table "editions", :force => true do |t|
     t.string   "title"
@@ -68,6 +68,10 @@ ActiveRecord::Schema.define(:version => 20110124102414) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "epigraph"
+    t.string   "attachment1_file_name"
+    t.string   "attachment1_content_type"
+    t.integer  "attachment1_file_size"
+    t.datetime "attachment1_updated_at"
   end
 
 end
