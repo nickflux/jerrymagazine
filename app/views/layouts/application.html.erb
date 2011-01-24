@@ -4,12 +4,12 @@
   <head>
     <title>JERRY MAGAZINE</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <%= stylesheet_link_tag "application-edition-#{@edition.id}" %>
+    <%= stylesheet_link_tag "application-edition-#{@edition.edition_no}" %>
   </head>
   <body>
     <div id="wrapper">
       <div id="header">
-        <%= link_to(image_tag("jerry_logo-edition-#{@edition.id}.png"), home_path, :id => "main_logo") %>
+        <%= link_to(image_tag("jerry_logo-edition-#{@edition.edition_no}.png"), home_path, :id => "main_logo") %>
       </div>
       <div id="main_nav">
         <ul>
