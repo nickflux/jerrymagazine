@@ -2,7 +2,7 @@ class EditionsController < ApplicationController
   # GET /editions
   # GET /editions.xml
   def index
-    @editions = Edition.all
+    @editions = Edition.find_all_by_published(true, :order => "publish_date DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class EditionsController < ApplicationController
   # GET /editions/1
   # GET /editions/1.xml
   def show
-    @edition  = Edition.find(params[:id], :order => 'publish_date DESC')
+    @edition  = Edition.find(params[:id])
     @poets    = @edition.contributors.all(:conditions => ["work_type = ?", 'poetry'])
     @prosers  = @edition.contributors.all(:conditions => ["work_type = ?", 'prose'])
     @reviews  = @edition.works.all(:conditions => "work_type = 'review'")
