@@ -13,8 +13,8 @@ class WorksController < ApplicationController
   # GET /works/1
   # GET /works/1.xml
   def show
-    @work = Work.find(params[:id])
-
+    @work     = Work.find(params[:id])
+    @edition  = @work.edition
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @work }

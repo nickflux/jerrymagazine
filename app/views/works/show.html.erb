@@ -1,18 +1,22 @@
-<h2>
-  <%=white_list @work.title %>
-</h2>
-<%- if !@work.epigraph.blank? -%>
-  <p class="epigraph">
-    <%=white_list @work.epigraph %>
+<% if @work.attachment1_file_name -%>
+  <%= image_tag @work.attachment1.url %>
+  <br/>
+<% else -%>
+  <h2>
+    <%=white_list @work.title %>
+  </h2>
+  <%- if !@work.epigraph.blank? -%>
+    <p class="epigraph">
+      <%=white_list @work.epigraph %>
+    </p>
+  <%- end -%>
+
+  <p class="name">
+    by <%=h @work.user.get_fullname %>
   </p>
-<%- end -%>
 
-<p class="name">
-  by <%=h @work.user.get_fullname %>
-</p>
-
-<p>
-  <%=white_list @work.work_content %>
-</p>
-
+  <p>
+    <%=white_list @work.work_content %>
+  </p>
+<% end -%>
 <%= link_to 'Back', home_path %>

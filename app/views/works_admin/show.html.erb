@@ -33,6 +33,9 @@
   <%=h @work.user.get_fullname %>
 </p>
 
-
 <%= link_to 'Edit', works_admin_path(:id=> @work, :action => 'edit') %> |
 <%= link_to 'Back', works_admin_path %>
+<br/>
+<% if @work.attachment1_file_name -%>
+  <%= image_tag @work.attachment1.url %>
+<% end -%>
