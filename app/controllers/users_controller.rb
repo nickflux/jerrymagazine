@@ -14,7 +14,7 @@ class UsersController < AdminController
   end
  
   def create
-    logout_keeping_session!
+    #logout_keeping_session!
     @user = User.new(params[:user])
     success = @user && @user.save
     if success && @user.errors.empty?
