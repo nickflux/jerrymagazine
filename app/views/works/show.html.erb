@@ -1,6 +1,12 @@
 <% if @work.attachment1_file_name -%>
-  <%= image_tag @work.attachment1.url %>
   <br/>
+  <%= image_tag @work.attachment1.url, :class => "work_image" %>
+  <br/>
+  <br/>
+  <br/>
+  <p class="name">
+    by <%=h @work.user.get_fullname %>
+  </p>
 <% else -%>
   <h2>
     <%=white_list @work.title %>

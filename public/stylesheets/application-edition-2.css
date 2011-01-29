@@ -7,7 +7,8 @@ height: 100%;
 }
 body {
 background-color: #ABABAB;
-font-family: Tahoma, Geneva, sans-serif;
+/*font-family: Tahoma, Geneva, sans-serif;*/
+font-family: Georgia, serif;
 color: #000;
 }
 ul {
@@ -44,7 +45,8 @@ text-align: left;
 width: 750px;
 }
 #header {
-text-align: center;
+text-align: left;
+padding-left: 20px;
 border-bottom: 1px solid rgb(51,0,0);
 margin-bottom: 10px;
 }
@@ -65,7 +67,7 @@ margin-bottom: 15px;
 }
 #main_nav li {
 float: left;
-padding: 5px 125px 5px 0;
+padding: 5px 120px 5px 0;
 text-transform: uppercase;
 }
 #main {
@@ -79,6 +81,9 @@ margin-bottom: 10px;
 #main h2 {
 margin: 20px 0px;
 font-weight: normal;
+}
+#main img.work_image {
+width: 900px;
 }
 
 #footer {
