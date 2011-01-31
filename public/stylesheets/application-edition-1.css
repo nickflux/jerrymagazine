@@ -114,7 +114,8 @@ li.first_level {
 padding-bottom: 10px;
 }
 ul.second_level li {
-padding-left: 10px;
+padding-left: 20px;
+text-indent: -10px;
 font-style: italic;
 }
 .first_line_indent {
