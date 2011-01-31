@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
   end
   
   def get_edition_works(edition_id, work_type)
-    works.all(:conditions => ["edition_id = ? AND work_type = ?", edition_id, work_type])
+    works.all(:conditions => ["edition_id = ? AND work_type = ?", edition_id, work_type], :order => "ordinal")
   end
 
   protected

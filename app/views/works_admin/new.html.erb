@@ -11,7 +11,7 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
-    <p>
+  <p>
     <%= f.label :epigraph %><br />
     <%= f.text_field :epigraph %>
   </p>
@@ -22,6 +22,13 @@
   <p>
     <%= f.label :work_content %><br />
     <%= f.text_area :work_content, :class => "mceEditor" %>
+  </p>
+  <p>
+    <%= f.label :attachment1, "Work Image" %><br />
+    <%= f.file_field :attachment1 %>
+  <p>
+    <%= f.label :ordinal, "Order" %><br />
+    <%= f.text_field :ordinal %>
   </p>
   <p>
     <%= f.label :edition_id %><br />

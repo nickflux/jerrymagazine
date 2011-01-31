@@ -28,6 +28,10 @@
     <%= f.file_field :attachment1 %>
   </p>
   <p>
+    <%= f.label :ordinal, "Order" %><br />
+    <%= f.text_field :ordinal %>
+  </p>
+  <p>
     <%= f.label :edition_id %><br />
     <%= f.select :edition_id, Edition.all(:order => 'edition_no').collect{|e| ["#{e.edition_no} #{e.title}", e.id] } %>
   </p>

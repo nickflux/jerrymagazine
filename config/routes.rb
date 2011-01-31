@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   
   map.about_us    '/about_us', :controller => 'public', :action => 'about_us'
-  map.editors_letter    '/editors_letter', :controller => 'public', :action => 'editors_letter'
+  map.editors_letter    '/note_to_note', :controller => 'public', :action => 'editors_letter'
   map.submit_page '/submit', :controller => 'public', :action => 'submit'
   map.home        '/home', :controller => 'public', :action => 'index'
 
