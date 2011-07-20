@@ -1,21 +1,21 @@
 <p>
   <b>Title:</b>
-  <%=h @edition.title %>
+  <%= @edition.title %>
 </p>
 
 <p>
   <b>Edition no:</b>
-  <%=h @edition.edition_no %>
+  <%= @edition.edition_no %>
 </p>
 
 <p>
   <b>Publish date:</b>
-  <%=h @edition.publish_date %>
+  <%= @edition.publish_date %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%=h @edition.description %>
+  <%= @edition.description %>
 </p>
 
 <%= link_to 'Back', editions_path %>
@@ -33,11 +33,11 @@
 
 <% @edition.works.each do |work| %>
   <tr>
-    <td><%=h work.work_type %></td>
-    <td><%=h work.title %></td>
-    <td><%=truncate(h(work.abstract)) %></td>
-    <td><%=truncate(h(work.work_content)) %></td>
-    <td><%=h work.user.get_fullname %></td>
+    <td><%= work.work_type %></td>
+    <td><%= work.title_calc %></td>
+    <td><%=truncate(work.abstract_calc) %></td>
+    <td><%=truncate(work.work_content_calc) %></td>
+    <td><%= work.user.get_fullname %></td>
     <td><%= link_to 'Show', work %></td>
   </tr>
 <% end %>

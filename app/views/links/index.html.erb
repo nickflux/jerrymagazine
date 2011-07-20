@@ -3,7 +3,7 @@
 <table>
   <% links.each do |link| %>
     <tr>
-      <td><%=link_to(h(link.title), link.link_url) %></td>
+      <td><%=link_to(link.title, link.link_url) %></td>
     </tr>
   <% end %>
 </table>

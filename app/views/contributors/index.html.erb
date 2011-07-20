@@ -9,9 +9,9 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%=h user.get_fullname %></td>
-    <td><%=h user.group %></td>
-    <td><%=h user.writer_type %></td>
+    <td><%= user.get_fullname %></td>
+    <td><%= user.group %></td>
+    <td><%= user.writer_type %></td>
     <td><%= link_to 'Show', users_admin_path(:id=> user, :action => 'show') %></td>
   </tr>
 <% end %>
