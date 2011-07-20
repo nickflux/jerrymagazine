@@ -1,4 +1,4 @@
-<h1>Listing works</h1>
+<h2>Listing works</h2>
 
 <table>
   <tr>
@@ -11,18 +11,18 @@
 
 <% @works.each do |work| %>
   <tr>
-    <td><%=h work.work_type %></td>
-    <td><%=h work.title %></td>
-    <td><%=h work.edition.edition_no.to_s%>: <%=h work.edition.title %></td>
-    <td><%=h work.user.get_fullname %></td>
-    <td><%=h work.ordinal %></td>
-    <td><%= link_to 'Show', works_admin_path(:id=> work, :action => 'show') %></td>
-    <td><%= link_to 'Edit', works_admin_path(:id=> work, :action => 'edit') %></td>
-    <td><%= link_to 'Destroy', works_admin_path(:id=> work, :action => 'destroy'), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= work.work_type %></td>
+    <td><%= work.title_calc %></td>
+    <td><%= work.edition.edition_no.to_s%>: <%= work.edition.title %></td>
+    <td><%= work.user.get_fullname %></td>
+    <td><%= work.ordinal %></td>
+    <td><%= link_to 'Show', works_admin_path(:id => work, :action => 'show'), :class => "button" %></td>
+    <td><%= link_to 'Edit', works_admin_path(:id => work, :action => 'edit'), :class => "button" %></td>
+    <td><%= link_to 'Destroy', works_admin_path(:id => work, :action => 'destroy'), :confirm => 'Are you sure?', :method => :delete, :class => "button negative" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New work', works_admin_path(:action => 'new') %>
+<%= link_to 'New work', works_admin_path(:action => 'new'), :class => "button positive" %>

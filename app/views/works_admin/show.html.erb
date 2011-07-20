@@ -1,46 +1,39 @@
-<p>
-  <b>Type:</b>
-  <%=h @work.work_type %>
-</p>
+<h2>Work Preview</h2>
+<div id="preview_show">
+  <h3><%= @work.title_calc %></h3>
+  <div class="show_inline">
+    <h4>Type:</h4>
+    <%= @work.work_type %>
+  </div>
+  <div class="show_inline">
+    <h4>Epigraph:</h4>
+    <%= @work.epigraph_calc %>
+  </div>
+  <h4 class="cb">Abstract:</h4>
+  <%= @work.abstract_calc %>
 
-<p>
-  <b>Title:</b>
-  <%=h @work.title %>
-</p>
+  <h4>Work:</h4>
+  <%= @work.work_content_calc %>
+  
+  <div class="show_inline">
+    <h4>Order:</h4>
+    <%= @work.ordinal %>
+  </div>
+  <div class="show_inline">
+    <h4>Edition:</h4>
+    <%= @work.edition.edition_no.to_s%>: <%= @work.edition.title %>
+  </div>
+  <div class="show_inline">
+    <h4>Writer:</h4>
+    <%= @work.user.get_fullname %>
+  </div>
 
-<p>
-  <b>Epigraph:</b>
-  <%=h @work.epigraph %>
-</p>
+  <br class="cb"/>
 
-<p>
-  <b>Abstract:</b>
-  <%=white_list @work.abstract %>
-</p>
-
-<p>
-  <b>Work content:</b>
-  <%=white_list @work.work_content %>
-</p>
-
-<p>
-  <b>Order:</b>
-  <%=h @work.ordinal %>
-</p>
-
-<p>
-  <b>Edition:</b>
-  <%=h @work.edition.edition_no.to_s%>: <%=h @work.edition.title %>
-</p>
-
-<p>
-  <b>Writer:</b>
-  <%=h @work.user.get_fullname %>
-</p>
-
-<%= link_to 'Edit', works_admin_path(:id=> @work, :action => 'edit') %> |
-<%= link_to 'Back', works_admin_path %>
-<br/>
-<% if @work.attachment1_file_name -%>
-  <%= image_tag @work.attachment1.url %>
-<% end -%>
+  <%= link_to 'Edit', works_admin_path(:id => @work, :action => 'edit'), :class => "button" %>
+  <%= link_to 'Back', works_admin_path, :class => "button" %>
+  <br class="cb"/>
+  <% if @work.attachment1_file_name -%>
+    <%= image_tag @work.attachment1.url %>
+  <% end -%>
+</div>

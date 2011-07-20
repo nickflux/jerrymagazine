@@ -1,0 +1,32 @@
+<%= f.error_messages %>
+<%= f.input :work_type, :collection => @work_type_opts %>
+<%= f.input :title_tt, :label => 'Title (use textile)' %>
+<%= f.input :title, :label => 'Title (not textile, for ID)' %>
+<%= f.input :epigraph_tt, :as => :string, :label => 'Epigraph (use textile)' %>
+<div>
+  <p class="old_input_label">Click to <span>show</span> Epigraph (old version)</p>
+  <div class="old_input">
+    <%= f.input :epigraph, :as => :string, :label => 'Epigraph (old version)' %>
+  </div>
+</div>
+<%= f.input :abstract_tt, :label => 'Abstract (use textile)' %>
+<div>
+  <p class="old_input_label">Click to <span>show</span> Abstract (old version)</p>
+  <div class="old_input">
+    <%= f.input :abstract, :label => 'Abstract (old version)', :input_html => {:class => "mceEditor"} %>
+  </div>
+</div>
+<%= f.input :work_content_tt, :label => 'Content (use textile)' %>
+<div>
+  <p class="old_input_label">Click to <span>show</span> Content (old version)</p>
+  <div class="old_input">
+    <%= f.input :work_content, :label => 'Content (old version)', :input_html => {:class => "mceEditor"} %>
+  </div>
+</div>
+<%= f.input :attachment1 do %>
+  <%= f.file_field :attachment1 %>
+<%- end -%>
+<%= f.input :ordinal %>
+<%= f.association :edition %>
+<%= f.association :user, :collection => User.all(:order => 'lastname').collect{|u| ["#{u.lastname}, #{u.firstname}", u.id] } %>
+<%= f.button :submit %>

@@ -1,36 +1,82 @@
-ActionController::Routing::Routes.draw do |map|
-  
-  map.editions_admin  '/admin/editions/:action', :controller => 'editions_admin'
-  map.works_admin     '/admin/works/:action', :controller => 'works_admin'
-  map.links_admin     '/admin/links/:action', :controller => 'links_admin'
-  map.users_admin     '/admin/users/:action', :controller => 'users'
-  
-  map.resources :links
+Jerrymagazine::Application.routes.draw do
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
-  map.resources :works
+  match '/admin' => 'admin#index', :as => :admin
+  match '/admin/editions/:action' => 'editions_admin', :as => :editions_admin
+  match '/admin/works/:action' => 'works_admin', :as => :works_admin
+  match '/admin/links/:action' => 'links_admin', :as => :links_admin
+  match '/admin/users/:action' => 'users', :as => :users_admin
   
-  map.resources :editions
+  match '/logout' => 'sessions#destroy', :as => :logout
+  match '/login' => 'sessions#new', :as => :login
+  match '/register' => 'users#create', :as => :register
+  match '/signup' => 'users#new', :as => :signup
   
-  map.resources :contributors
+  resources :users
+  resource :session
+  
+  match '/about_us' => 'public#about_us', :as => :about_us
+  match '/note_to_note' => 'public#editors_letter', :as => :editors_letter
+  match '/submit' => 'public#submit', :as => :submit_page
+  match '/home' => 'public#index'
+  match '/archives/:action' => 'editions', :as => :archives
 
-  map.archives  '/archives/:action', :controller => 'editions'
+  # Sample of regular route:
+  #   match 'products/:id' => 'catalog#view'
+  # Keep in mind you can assign values other than :controller and :action
 
-  map.logout    '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login     '/login', :controller => 'sessions', :action => 'new'
-  map.register  '/register', :controller => 'users', :action => 'create'
-  map.signup    '/signup', :controller => 'users', :action => 'new'
-  map.resources :users
-  
-  map.about_us    '/about_us', :controller => 'public', :action => 'about_us'
-  map.editors_letter    '/note_to_note', :controller => 'public', :action => 'editors_letter'
-  map.submit_page '/submit', :controller => 'public', :action => 'submit'
-  map.home        '/home', :controller => 'public', :action => 'index'
+  # Sample of named route:
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # This route can be invoked with purchase_url(:id => product.id)
 
-  map.resource :session
-  
-  # remove this when new homepage ready
-  map.root :controller => "public", :action => "front_cover"
-  
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
+  resources :links
+  resources :works
+  resources :editions
+  resources :contributors
+
+  # Sample resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
+
+  # Sample resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Sample resource route with more complex sub-resources
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', :on => :collection
+  #     end
+  #   end
+
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => "public#front_cover"
+
+  # See how all your routes lay out with "rake routes"
+
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id(.:format)))'
 end

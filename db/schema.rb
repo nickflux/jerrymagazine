@@ -1,15 +1,16 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of Active Record to incrementally modify your database, and
-# then regenerate this schema definition.
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your database schema. If you need
-# to create the application database on another system, you should be using db:schema:load, not running
-# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110131222321) do
+ActiveRecord::Schema.define(:version => 20110720144853) do
 
   create_table "editions", :force => true do |t|
     t.string   "title"
@@ -56,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20110131222321) do
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
     t.text     "bio"
+    t.text     "bio_tt"
+    t.boolean  "old_style",                                :default => false
   end
 
   create_table "works", :force => true do |t|
@@ -73,6 +76,11 @@ ActiveRecord::Schema.define(:version => 20110131222321) do
     t.integer  "attachment1_file_size"
     t.datetime "attachment1_updated_at"
     t.integer  "ordinal",                  :default => 0
+    t.text     "abstract_tt"
+    t.string   "title_tt"
+    t.text     "work_content_tt"
+    t.text     "epigraph_tt"
+    t.boolean  "old_style",                :default => false
   end
 
 end

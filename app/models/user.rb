@@ -64,7 +64,15 @@ class User < ActiveRecord::Base
   def get_edition_works(edition_id, work_type)
     works.all(:conditions => ["edition_id = ? AND work_type = ?", edition_id, work_type], :order => "ordinal")
   end
-
+  
+  def bio_calc
+    if bio_tt.blank?
+      return white_list(bio).html_safe
+    else
+      return textilize(bio_tt).html_safe
+    end
+  end
+  
   protected
     
 

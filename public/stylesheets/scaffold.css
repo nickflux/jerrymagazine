@@ -1,7 +1,5 @@
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+span.error {
+  color: red;
 }
 
 #errorExplanation {
@@ -14,6 +12,7 @@
 }
 
 #errorExplanation h2 {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;

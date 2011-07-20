@@ -1,0 +1,26 @@
+<%= f.error_messages %>
+
+<%= f.input :login %>
+
+<%= f.input :email %>
+
+<%= f.input :firstname %>
+
+<%= f.input :lastname %>
+
+<%= f.input :group,:collection => @user_group_opts %>
+
+<%= f.input :password %>
+
+<%= f.input :password_confirmation %>
+
+<%= f.input :bio_tt, :label => 'Bio' %>
+
+<div>
+  <p class="old_input_label">Click to <span>show</span> Bio (old version)</p>
+  <div class="old_input">
+    <%= f.input :bio, :label => 'Bio (old version)', :input_html => {:class => "mceEditor"} %>
+  </div>
+</div>
+
+<%= f.button :submit %>

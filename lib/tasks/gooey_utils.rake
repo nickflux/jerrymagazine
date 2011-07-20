@@ -2,7 +2,7 @@ namespace :gooey do
   
   #TODO: get app name automatically
   real_images_root  = "/var/www-assets/jerrymagazine/images/"
-  app_images_root   = "#{RAILS_ROOT}/public/images/"
+  app_images_root   = "#{::Rails.root.to_s}/public/images/"
   
   desc "Restart the server (using passenger)"
   task :restart do
@@ -41,7 +41,7 @@ namespace :gooey do
     
     # get all models
     page_subs = Array.new
-    Dir["#{RAILS_ROOT}/app/models/*.rb"].each{|path|
+    Dir["#{::Rails.root.to_s}/app/models/*.rb"].each{|path|
       page_subs << File::basename(path).gsub(/\.rb/, '').pluralize
     }
     
@@ -77,7 +77,7 @@ namespace :gooey do
   end
   
   desc 'Create YAML test fixtures from data in an existing database.  
-  Defaults to development database.  Set RAILS_ENV to override.'
+  Defaults to development database.  Set Rails.env to override.'
 
   task :extract_fixtures => :environment do
     sql  = "SELECT * FROM %s"
@@ -85,7 +85,7 @@ namespace :gooey do
     ActiveRecord::Base.establish_connection
     (ActiveRecord::Base.connection.tables - skip_tables).each do |table_name|
       i = "000"
-      File.open("#{RAILS_ROOT}/test/fixtures/#{table_name}.yml", 'w') do |file|
+      File.open("#{::Rails.root.to_s}/test/fixtures/#{table_name}.yml", 'w') do |file|
         data = ActiveRecord::Base.connection.select_all(sql % table_name)
         file.write data.inject({}) { |hash, record|
           hash["#{table_name}_#{i.succ!}"] = record
@@ -96,13 +96,13 @@ namespace :gooey do
   end
   
   desc 'Create YAML gooey_config fixtures from data in an existing database.  
-  Defaults to development database.  Set RAILS_ENV to override.'
+  Defaults to development database.  Set Rails.env to override.'
 
   task :extract_gooey_configs => :environment do
     sql  = "SELECT * FROM gooey_configs"
     ActiveRecord::Base.establish_connection
     i = "000"
-    File.open("#{RAILS_ROOT}/test/fixtures/gooey_configs_bk.yml", 'w') do |file|
+    File.open("#{::Rails.root.to_s}/test/fixtures/gooey_configs_bk.yml", 'w') do |file|
       data = ActiveRecord::Base.connection.select_all(sql)
       file.write data.inject({}) { |hash, record|
         hash["gooey_configs_#{i.succ!}"] = record
