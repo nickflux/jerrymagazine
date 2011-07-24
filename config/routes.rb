@@ -1,6 +1,8 @@
 Jerrymagazine::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  
+  mount AssetServer.instance => '/assets'
 
   match '/admin' => 'admin#index', :as => :admin
   match '/admin/editions/:action' => 'editions_admin', :as => :editions_admin

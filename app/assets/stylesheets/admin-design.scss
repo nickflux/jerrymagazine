@@ -1,0 +1,75 @@
+/* JERRY STYLES */
+body h1, body h2 {
+  margin: 0;
+  padding: 0;
+  font-family: "Cabin Sketch", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+}
+body h2 {
+  font-size: 36px;
+  color: #181A63;
+}
+#flash_message {
+  font-family: 'Love Ya Like A Sister', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  margin: 10px;
+  color: green;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.cb {
+  clear: both;
+}
+.simple_form label {  
+  float: left;  
+  width: 100px;  
+  text-align: right;  
+  margin: 2px 10px;  
+}
+.simple_form input[type='number'] {
+  width: 30px;
+  text-align: right;
+}
+.simple_form .old_input_label {
+  font-style: italic;
+  color: green;
+}
+.simple_form div.old_input {
+  display: none;
+}
+.simple_form div.input {  
+  margin-bottom: 10px;
+  clear: left;  
+} 
+.simple_form div.boolean, .simple_form input[type='submit'] {  
+  margin-left: 120px;  
+}  
+.simple_form div.boolean label {  
+  float: none;  
+  margin: 0;  
+}
+#main_menu {
+  float: left;
+}
+#main_menu ul {
+  list-style-type: none;
+  margin : 0;
+}
+#main_menu li {
+  float: left;
+  padding: 5px;
+}
+#preview_show .show_inline {
+  clear: both;
+  margin-bottom: 10px;
+}
+#preview_show .show_inline h4 {
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
+}

@@ -1,0 +1,10 @@
+%h2= @edition.title
+#note_to_note
+  %h3 Note to Note
+  = textilize(@edition.description)
+%ul#contributors
+  - @contributors.each do |contributor|
+    %li
+      %h4= link_to(contributor.get_fullname, contributor_path(contributor))
+      %p
+        a short bit of text
