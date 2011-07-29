@@ -1,4 +1,2 @@
 $ ->
-  $("#contributors .user").click ->
-    $("#contributors li ul").hide()
-    $(this).siblings("ul").show('slow')
+  $("#contributors h4[rel]").overlay();

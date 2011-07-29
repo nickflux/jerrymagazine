@@ -23,13 +23,20 @@
     <%= f.input :work_content, :label => 'Content (old version)', :input_html => {:class => "mceEditor"} %>
   </div>
 </div>
-<%= f.input :attachment1 do %>
+<%= f.input :attachment1, :label => 'Work Image' do %>
   <%= f.file_field :attachment1 %>
 <%- end -%>
 <%= f.input :ordinal %>
-
-
-
+<div id="work_pages">
+  <h3>Work Pages</h3>
+  <%= f.simple_fields_for :work_pages do |wp| %>
+    <%= wp.input :page_number %>
+    <%= wp.input :page_content, :label => 'Page Content (use textile)' %>
+    <%= wp.input :work_image, :label => 'Page Image' do %>
+      <%= wp.file_field :work_image %>
+    <%- end -%>
+  <% end %>
+</div>
 <%= f.association :edition %>
 <%= f.association :user, :collection => User.all(:order => 'lastname').collect{|u| ["#{u.lastname}, #{u.firstname}", u.id] } %>
 <%= f.button :submit %>

@@ -25,6 +25,7 @@ class WorksAdminController < AdminController
   # GET /admin/works/new.xml
   def new
     @work = Work.new
+    @work.work_pages.build
 
     respond_to do |format|
       format.html # new.html.erb

@@ -69,16 +69,46 @@ a:hover {
     li {
       h4 {
         @include red-bottom;
+        &:hover {
+          color: $red;
+          cursor: pointer;
+        }
       }
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
-      li {
-        margin-left: 10px;
-        font-style: italic;
+    .work_overlay {
+      /* must be initially hidden */
+    	display: none;
+    	z-index: 10000;
+	
+    	/* styling */
+    	background-color: $light-grey;
+    	width: 400px;	
+    	min-height: 200px;
+    	border: 1px solid #666;
+	
+    	/* CSS3 styling for latest browsers */
+    	-moz-box-shadow:0 0 90px 5px #000;
+    	-webkit-box-shadow: 0 0 90px #000;
+    	.close {
+      	background-image: url(/images/overlay/close.png);
+      	position: absolute;
+      	right: -15px;
+      	top: -15px;
+      	cursor: pointer;
+      	height: 35px;
+      	width: 35px;
+      }
+    	ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px;
+        li {
+          margin-left: 10px;
+          font-style: italic;
+        }
       }
     }
+    
   }
 }
 #work_wrapper #main {

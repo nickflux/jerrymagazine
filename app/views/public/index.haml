@@ -4,10 +4,11 @@
 %ul#contributors
   - @contributors.each do |contributor|
     %li
-      %h4[contributor]
-        %a= contributor.get_fullname
+      %h4{:rel => "#overlay_user_#{contributor.id}"}
+        = contributor.get_fullname
       %p
         a short bit of text
-      %ul{:style => "display: none;"}
-        - contributor.get_edition_works(@edition.id).each do |work|
-          %li= link_to(no_paragraph(work.title_calc), work_path(work))
+      .work_overlay[contributor, :overlay]
+        %ul
+          - contributor.get_edition_works(@edition.id).each do |work|
+            %li= link_to(no_paragraph(work.title_calc), work_path(work))

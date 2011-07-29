@@ -73,3 +73,15 @@ body h2 {
   padding: 0;
   padding-right: 10px;
 }
+#work_pages {
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #feffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C */
+}
