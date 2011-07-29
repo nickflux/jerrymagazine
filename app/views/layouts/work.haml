@@ -6,10 +6,10 @@
     = javascript_include_tag "/assets/application"
     = csrf_meta_tag
   %body
-    #wrapper.container_12
-      #fixed_furniture.grid_5
-        %a#main_image.grid_5{:href => "/home"}
-        %h1.grid_5
+    #work_wrapper.container_12
+      #fixed_furniture.grid_3
+        %a#main_image.grid_3{:href => "/home"}
+        %h1.grid_3
           Jerry
         .clear
         %ul
@@ -18,7 +18,7 @@
           %li #{link_to('Past Issues', archives_path)}
           %li #{link_to('Submit', submit_page_path)}
           %li #{link_to('Links', links_path)}
-      #main.grid_7
+      #main.grid_9
         %h1= @edition.title
         = yield
       #footer.grid_12

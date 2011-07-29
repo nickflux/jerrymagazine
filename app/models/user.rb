@@ -61,8 +61,12 @@ class User < ActiveRecord::Base
     return "#{firstname} #{lastname}"
   end
   
-  def get_edition_works(edition_id, work_type)
-    works.all(:conditions => ["edition_id = ? AND work_type = ?", edition_id, work_type], :order => "ordinal")
+  def get_edition_works(edition_id, work_type = nil)
+    if work_type.blank?
+      works.where(:edition_id => edition_id).order(:ordinal).all
+    else
+      works.where(:edition_id => edition_id, :work_type => work_type).order(:ordinal).all
+    end
   end
   
   def bio_calc

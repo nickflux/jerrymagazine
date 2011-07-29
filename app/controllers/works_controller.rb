@@ -16,7 +16,7 @@ class WorksController < ApplicationController
     @work     = Work.find(params[:id])
     @edition  = @work.edition
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => 'work' }
       format.xml  { render :xml => @work }
     end
   end

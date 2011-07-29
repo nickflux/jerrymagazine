@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110720144853) do
+ActiveRecord::Schema.define(:version => 20110729074306) do
 
   create_table "editions", :force => true do |t|
     t.string   "title"
@@ -59,6 +59,18 @@ ActiveRecord::Schema.define(:version => 20110720144853) do
     t.text     "bio"
     t.text     "bio_tt"
     t.boolean  "old_style",                                :default => false
+  end
+
+  create_table "work_pages", :force => true do |t|
+    t.integer  "work_id"
+    t.integer  "page_number"
+    t.text     "page_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "work_image_file_name"
+    t.string   "work_image_content_type"
+    t.integer  "work_image_file_size"
+    t.datetime "work_image_updated_at"
   end
 
   create_table "works", :force => true do |t|

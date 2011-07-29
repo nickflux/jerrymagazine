@@ -6,14 +6,16 @@ class Work < ActiveRecord::Base
     :bucket => 'jerry-1pzrp75tx2ttjd1a7d02',
     :path => ":attachment/:id/:style/:filename"
     
-  belongs_to :edition
-  belongs_to :user
-  belongs_to :contributor, :class_name => 'User', :foreign_key => :user_id
+  belongs_to  :edition
+  belongs_to  :user
+  belongs_to  :contributor, :class_name => 'User', :foreign_key => :user_id
+  has_many    :work_pages, :dependent => :destroy
+  accepts_nested_attributes_for :work_pages, :allow_destroy => true
+  
   
   validates :title, :presence => true
   validates :title_tt, :presence => true
   validates :work_type, :presence => true
-  
   
   has_friendly_id :title, :use_slug => true
   

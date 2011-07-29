@@ -1,0 +1,108 @@
+$dark-grey: rgb(174,174,174);
+$middle-grey: rgb(202,202,202);
+$light-grey: rgb(234,234,234);
+$red: #FF0000;
+@mixin red-bottom {
+  border-bottom: 5px solid $red;
+}
+body {
+  font-family: Helvetica, arial, sans-serif;
+}
+a {
+  color: #000;
+  text-decoration: none;
+  &:hover {
+    color: $red;
+  }
+}
+a:hover {
+  
+}
+#fixed_furniture {
+  #main_image {
+    height: 380px;
+    background: url(/images/jerry-home-image-edition3.png) no-repeat top left;
+  }
+  h1 {
+    padding: 10px 0 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: $dark-grey;
+    border: 1px solid #000;
+  }
+  ul {
+    list-style-type: none;
+    float: right;
+    width: 80px;
+    background-color: $dark-grey;
+    padding: 0;
+    border: 1px solid #000;
+  }
+  li {
+    text-align: center;
+    padding: 30px 15px;
+  }
+}
+#main {
+  h1 {
+    margin-top: 0;
+    padding: 10px 10px 5px 10px;
+    text-align: right;
+    background-color: $dark-grey;
+    border: 1px solid #000;
+  }
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    @include red-bottom;
+  }
+  #note_to_note {
+    h3 {
+      margin: 0;
+    }
+    padding: 20px;
+    background-color: $light-grey;
+  }
+  #contributors {
+    list-style-type: none;
+    padding: 0;
+    li {
+      h4 {
+        @include red-bottom;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+        margin-left: 10px;
+        font-style: italic;
+      }
+    }
+  }
+}
+#work_wrapper #main {
+  background-color: $middle-grey;
+  padding: 10px 0;
+  h1 {
+    background: none;
+    border: none;
+    @include red-bottom;
+    margin: 0 10px;
+  }
+  div, h3, p.name, p.epigraph, a.back_link {
+    margin: 0 10px;
+  }
+  h3 {
+    margin-top: 20px;
+    padding-left: 10px;
+    font-weight: normal;
+  }
+  p.name {
+    margin-top: 20px;
+    padding-left: 50px;
+  }
+  a {
+    color: $red;
+  }
+}

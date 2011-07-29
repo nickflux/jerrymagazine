@@ -1,0 +1,10 @@
+- if @work.attachment1_file_name
+  = image_tag @work.attachment1.url, :class => "work_image"
+  %p.name by #{@work.user.get_fullname}
+- else
+  %h3= @work.title_calc
+  - if !@work.epigraph.blank?
+    %p.epigraph= @work.epigraph_calc
+  %p.name= @work.user.get_fullname
+  .main_work= @work.work_content_calc
+= link_to 'Back', home_path, :class => "back_link"

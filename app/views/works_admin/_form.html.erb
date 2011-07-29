@@ -27,6 +27,9 @@
   <%= f.file_field :attachment1 %>
 <%- end -%>
 <%= f.input :ordinal %>
+
+
+
 <%= f.association :edition %>
 <%= f.association :user, :collection => User.all(:order => 'lastname').collect{|u| ["#{u.lastname}, #{u.firstname}", u.id] } %>
 <%= f.button :submit %>

@@ -22,9 +22,17 @@ group :production do
   gem "therubyracer"
 end
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :test, :development do
+  gem "rspec-rails"
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'timecop'
+  gem 'fakeweb'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'growl'
+  gem 'guard-rspec'
+  gem 'guard-livereload'#, :git => 'git://github.com/guard/guard-livereload.git'
+  gem 'guard-pow'
+end
