@@ -13,7 +13,27 @@
   <%= @work.abstract_calc %>
 
   <h4>Work:</h4>
-  <%= @work.work_content_calc %>
+  <%- if @work.work_pages.size > 0 -%>
+  
+    <%- @work.work_pages.each do |work_page| %>
+      <h5>Page: <%= work_page.page_number %></h5>
+      
+      <% if work_page.work_image_file_name -%>
+        <%= image_tag work_page.work_image.url %>
+      <%- else -%>
+        <%= work_page.page_content_calc %>
+      <% end -%>
+    <%- end -%>
+    
+  <%- else -%>
+    
+    <%- if @work.attachment1_file_name -%>
+      <%= image_tag @work.attachment1.url %>
+    <%- else -%>
+      <%= @work.work_content_calc %>
+    <%- end -%>
+    
+  <%- end -%>
   
   <div class="show_inline">
     <h4>Order:</h4>

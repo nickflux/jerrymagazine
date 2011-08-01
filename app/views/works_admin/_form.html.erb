@@ -30,12 +30,9 @@
 <div id="work_pages">
   <h3>Work Pages</h3>
   <%= f.simple_fields_for :work_pages do |wp| %>
-    <%= wp.input :page_number %>
-    <%= wp.input :page_content, :label => 'Page Content (use textile)' %>
-    <%= wp.input :work_image, :label => 'Page Image' do %>
-      <%= wp.file_field :work_image %>
-    <%- end -%>
+    <%= render 'work_page_fields', :wp => wp %>
   <% end %>
+  <%= link_to_add_fields "Add work page", f, :work_pages %>
 </div>
 <%= f.association :edition %>
 <%= f.association :user, :collection => User.all(:order => 'lastname').collect{|u| ["#{u.lastname}, #{u.firstname}", u.id] } %>

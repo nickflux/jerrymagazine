@@ -2,15 +2,19 @@
 %html
   %head
     %title JERRY MAGAZINE
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Syncopate:400,700"
     = stylesheet_link_tag "/assets/application"
     = javascript_include_tag "/assets/application"
     = csrf_meta_tag
   %body
     #wrapper.container_12
-      #fixed_furniture.grid_5
+      #fixed_furniture.grid_5.prefix_1
         %a#main_image.grid_5{:href => "/home"}
         %h1.grid_5
-          Jerry
+          %a{:href => "/home"}
+            %span> J
+            erry
         .clear
         %ul
           %li #{link_to('Home', home_path)}
@@ -18,7 +22,7 @@
           %li #{link_to('Past Issues', archives_path)}
           %li #{link_to('Submit', submit_page_path)}
           %li #{link_to('Links', links_path)}
-      #main.grid_7
+      #main.grid_6
         %h1= @edition.title
         = yield
       #footer.grid_12

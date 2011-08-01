@@ -15,6 +15,12 @@ class WorksController < ApplicationController
   def show
     @work     = Work.find(params[:id])
     @edition  = @work.edition
+    @page     = params[:page].to_i
+    
+    if !@work.work_pages.none?
+      @work_page  = @work.work_pages[@page-1]
+    end
+    
     respond_to do |format|
       format.html { render :layout => 'work' }
       format.xml  { render :xml => @work }

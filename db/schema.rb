@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729074306) do
+ActiveRecord::Schema.define(:version => 20110801050142) do
 
   create_table "editions", :force => true do |t|
     t.string   "title"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20110729074306) do
     t.text     "bio"
     t.text     "bio_tt"
     t.boolean  "old_style",                                :default => false
+    t.string   "tagline"
   end
 
   create_table "work_pages", :force => true do |t|

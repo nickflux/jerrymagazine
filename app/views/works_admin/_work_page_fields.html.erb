@@ -1,0 +1,7 @@
+<div class="work_page_fields">
+  <%= wp.input :page_number %>
+  <%= wp.input :page_content, :label => 'Page Content (use textile)' %>
+  <%= wp.input :work_image, :label => 'Page Image' do %>
+    <%= wp.file_field :work_image %>
+  <%- end -%>
+</div>

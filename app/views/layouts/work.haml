@@ -2,6 +2,8 @@
 %html
   %head
     %title JERRY MAGAZINE
+    = stylesheet_link_tag "/assets/colaborate-type.css"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Syncopate:400,700"
     = stylesheet_link_tag "/assets/application"
     = javascript_include_tag "/assets/application"
     = csrf_meta_tag
@@ -10,7 +12,9 @@
       #fixed_furniture.grid_3
         %a#main_image.grid_3{:href => "/home"}
         %h1.grid_3
-          Jerry
+          %a{:href => "/home"}
+            %span> J
+            erry
         .clear
         %ul
           %li #{link_to('Home', home_path)}

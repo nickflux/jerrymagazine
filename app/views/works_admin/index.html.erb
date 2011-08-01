@@ -13,8 +13,8 @@
   <tr>
     <td><%= work.work_type %></td>
     <td><%= work.title_calc %></td>
-    <td><%= work.edition.edition_no.to_s%>: <%= work.edition.title %></td>
-    <td><%= work.user.get_fullname %></td>
+    <td><%= work.edition.try(:edition_no)%>: <%= work.edition.try(:title) %></td>
+    <td><%= work.user.try(:get_fullname) %></td>
     <td><%= work.ordinal %></td>
     <td><%= link_to 'Show', works_admin_path(:id => work, :action => 'show'), :class => "button" %></td>
     <td><%= link_to 'Edit', works_admin_path(:id => work, :action => 'edit'), :class => "button" %></td>

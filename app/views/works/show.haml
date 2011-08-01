@@ -1,10 +1,26 @@
-- if @work.attachment1_file_name
-  = image_tag @work.attachment1.url, :class => "work_image"
-  %p.name by #{@work.user.get_fullname}
+- if @work.work_pages.none?
+  - if @work.attachment1_file_name
+    = image_tag @work.attachment1.url, :class => "work_image"
+    %p.name by #{@work.user.get_fullname}
+  - else
+    %h3= @work.title_calc
+    - if !@work.epigraph.blank?
+      %p.epigraph= @work.epigraph_calc
+    %p.name= @work.user.get_fullname
+    .main_work= @work.work_content_calc
 - else
-  %h3= @work.title_calc
-  - if !@work.epigraph.blank?
-    %p.epigraph= @work.epigraph_calc
-  %p.name= @work.user.get_fullname
-  .main_work= @work.work_content_calc
-= link_to 'Back', home_path, :class => "back_link"
+  - if @work_page.work_image_file_name
+    = image_tag @work_page.work_image.url, :class => "work_image"
+  - else
+    - if @page == 1
+      %h3= @work.title_calc
+      - if !@work.epigraph.blank?
+        %p.epigraph= @work.epigraph_calc
+      %p.name= @work.user.get_fullname
+    .main_work= @work_page.page_content_calc
+#work_links
+  = link_to 'Back', home_path, :class => "back_link"
+  - if !@work.work_pages.none?
+    .page_links
+      - @work.work_pages.each_with_index do |work_page, index|
+        = link_to index+1, work_path(@work, :page => index+1), :class => "page_link #{if index+1 == @page then 'this_page' end}"

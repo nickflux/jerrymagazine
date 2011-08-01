@@ -8,4 +8,9 @@ class WorkPage < ActiveRecord::Base
   
   belongs_to :work
   
+  
+  def page_content_calc
+    return textilize(page_content).html_safe
+  end
+  
 end

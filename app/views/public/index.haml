@@ -7,7 +7,8 @@
       %h4{:rel => "#overlay_user_#{contributor.id}"}
         = contributor.get_fullname
       %p
-        a short bit of text
+        = contributor.tagline
+        &nbsp;
       .work_overlay[contributor, :overlay]
         %ul
           - contributor.get_edition_works(@edition.id).each do |work|
