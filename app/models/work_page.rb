@@ -7,7 +7,7 @@ class WorkPage < ActiveRecord::Base
     :path => ":attachment/:id/:style/:filename"
   
   belongs_to :work
-  
+  default_scope :order => 'page_number'
   
   def page_content_calc
     return textilize(page_content).html_safe

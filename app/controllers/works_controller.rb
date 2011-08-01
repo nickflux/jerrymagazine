@@ -15,7 +15,7 @@ class WorksController < ApplicationController
   def show
     @work     = Work.find(params[:id])
     @edition  = @work.edition
-    @page     = params[:page].to_i
+    @page     = params[:page].blank? ? 1 : params[:page].to_i
     
     if !@work.work_pages.none?
       @work_page  = @work.work_pages[@page-1]
