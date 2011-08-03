@@ -16,16 +16,10 @@
             %span> J
             erry
         .clear
-        %ul
-          %li #{link_to('Home', home_path)}
-          %li #{link_to('About', about_us_path)}
-          %li #{link_to('Past Issues', archives_path)}
-          %li #{link_to('Submit', submit_page_path)}
-          %li #{link_to('Links', links_path)}
+        = render 'layouts/main_mav'
       #main.grid_9
         %h1= @edition.title
         = yield
       #footer.grid_12
-        %p
-          this is the footer
+        = render 'layouts/footer'
     = render 'layouts/google_analytics'

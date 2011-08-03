@@ -11,7 +11,12 @@
   </div>
   <h4 class="cb">Abstract:</h4>
   <%= @work.abstract_calc %>
-
+  
+  <div class="show_inline">
+    <h4>Display images in a lightbox?:</h4>
+    <%= @work.images_lightbox %>
+  </div>
+  
   <h4>Work:</h4>
   <%- if @work.work_pages.size > 0 -%>
   
@@ -19,7 +24,7 @@
       <h5>Page: <%= work_page.page_number %></h5>
       
       <% if work_page.work_image_file_name -%>
-        <%= image_tag work_page.work_image.url %>
+        <%= image_tag work_page.work_image.url, :class => "work_image" %>
       <%- else -%>
         <%= work_page.page_content_calc %>
       <% end -%>
@@ -28,7 +33,7 @@
   <%- else -%>
     
     <%- if @work.attachment1_file_name -%>
-      <%= image_tag @work.attachment1.url %>
+      <%= image_tag @work.attachment1.url, :class => "work_image" %>
     <%- else -%>
       <%= @work.work_content_calc %>
     <%- end -%>

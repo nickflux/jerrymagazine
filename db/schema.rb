@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110801050142) do
+ActiveRecord::Schema.define(:version => 20110803204218) do
 
   create_table "editions", :force => true do |t|
     t.string   "title"
@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(:version => 20110801050142) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published",    :default => false
+    t.boolean  "published",            :default => false
+    t.text     "contributors_content"
   end
 
   create_table "links", :force => true do |t|
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20110801050142) do
     t.text     "work_content_tt"
     t.text     "epigraph_tt"
     t.boolean  "old_style",                :default => false
+    t.boolean  "images_lightbox"
   end
 
 end

@@ -2,4 +2,5 @@
 *= require grid
 *= require ui-lightness/jquery-ui
 *= require design-edition-3
+*= require colorbox
 */

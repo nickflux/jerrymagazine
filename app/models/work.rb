@@ -10,7 +10,7 @@ class Work < ActiveRecord::Base
   belongs_to  :user
   belongs_to  :contributor, :class_name => 'User', :foreign_key => :user_id
   has_many    :work_pages, :dependent => :destroy
-  accepts_nested_attributes_for :work_pages, :allow_destroy => true
+  accepts_nested_attributes_for :work_pages, :allow_destroy => true, :reject_if => proc { |attributes| attributes['page_number'].blank? }
   
   
   validates :title, :presence => true
@@ -19,7 +19,7 @@ class Work < ActiveRecord::Base
   
   has_friendly_id :title, :use_slug => true
   
-  default_scope :order => 'title'
+  default_scope includes(:user, :edition)
   
   ###
   # INSTANCE METHODS

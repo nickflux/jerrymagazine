@@ -35,6 +35,7 @@ Jerrymagazine::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :links
+  match '/friends-and-bastards' => 'links#index', :as => :friends_and_bastards
   resources :works
   resources :editions
   resources :contributors

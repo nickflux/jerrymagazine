@@ -8,4 +8,12 @@ class Edition < ActiveRecord::Base
   
   has_friendly_id :title, :use_slug => true
   
+  def contributors_content_calc
+    return textilize(contributors_content).html_safe
+  end
+  
+  def description_calc
+    return textilize(description).html_safe
+  end
+  
 end

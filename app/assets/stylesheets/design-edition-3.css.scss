@@ -1,9 +1,12 @@
 $dark-grey: rgb(174,174,174);
-$middle-grey: rgb(202,202,202);
+$middle-grey: rgb(205,205,205);
 $light-grey: rgb(234,234,234);
 $red: #D60000;
 @mixin red-bottom {
   border-bottom: 5px solid $red;
+}
+@mixin red-top {
+  border-top: 5px solid $red;
 }
 @mixin body-header {
   font-family: 'Lato', Helvetica, arial, sans-serif;
@@ -114,13 +117,12 @@ h1, h2 {
     	/* styling */
     	background-color: $light-grey;
     	width: 400px;	
-    	min-height: 200px;
     	border: 1px solid #666;
     	padding: 10px 15px;
 	
     	/* CSS3 styling for latest browsers */
-    	-moz-box-shadow:0 0 90px 5px #000;
-    	-webkit-box-shadow: 0 0 90px #000;
+    	-moz-box-shadow:0 0 10px 5px #333;
+    	-webkit-box-shadow: 0 0 10px #333;
     	.close {
       	background-image: url(/images/overlay/close.png);
       	position: absolute;
@@ -131,13 +133,17 @@ h1, h2 {
       	width: 35px;
       }
     	ul {
+    	  @include red-top;
         list-style-type: none;
         padding: 0;
+        padding-top: 20px;
         margin: 0;
+        margin-bottom: 20px;
         li {
           font-size: 1.1em;
           font-style: italic;
           padding: 5px 0;
+          padding-left: 40px;
         }
       }
     }
@@ -179,6 +185,17 @@ h1, h2 {
     }
     a {
       color: $red;
+    }
+    img.work_image {
+      width: 680px;
+      margin-left: 10px;
+    }
+    a.work_lightbox_image {
+      outline: none;
+    }
+    a.work_lightbox_image img {
+      width: 200px;
+      margin-left: 10px;
     }
     div.page_links {
       float: right;

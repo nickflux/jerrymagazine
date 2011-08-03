@@ -2,7 +2,7 @@ class WorksAdminController < AdminController
   # GET /admin/works
   # GET /admin/works.xml
   def index
-    @works = Work.all
+    @works = Work.order('editions.edition_no DESC, users.lastname, works.title').all
 
     respond_to do |format|
       format.html # index.html.erb

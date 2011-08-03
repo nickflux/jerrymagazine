@@ -1,7 +1,7 @@
 class ContributorsController < ApplicationController
   
   def index
-    @users  = User.all :order => 'lastname'
+    
   end
   
   def show

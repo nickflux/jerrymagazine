@@ -1,21 +1,27 @@
 <p>
   <b>Title:</b>
-  <%=h @edition.title %>
+  <%= @edition.title %>
 </p>
 
 <p>
   <b>Edition no:</b>
-  <%=h @edition.edition_no %>
+  <%= @edition.edition_no %>
 </p>
 
 <p>
   <b>Publish date:</b>
-  <%=h @edition.publish_date %>
+  <%= @edition.publish_date %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%=h @edition.description %>
+  <%= @edition.description_calc %>
+</p>
+
+
+<p>
+  <b>Contributors:</b>
+  <%= @edition.contributors_content_calc %>
 </p>
 
 
@@ -32,9 +38,9 @@
 
 <% @edition.works.each do |work| %>
   <tr>
-    <td><%=h work.work_type %></td>
-    <td><%=h work.title %></td>
-    <td><%=h work.user.get_fullname %></td>
+    <td><%= work.work_type %></td>
+    <td><%= work.title %></td>
+    <td><%= work.user.get_fullname %></td>
     <td><%= link_to 'Show', works_admin_path(:id=> work, :action => 'show') %></td>
     <td><%= link_to 'Edit', works_admin_path(:id=> work, :action => 'edit') %></td>
     <td><%= link_to 'Destroy', works_admin_path(:id=> work, :action => 'destroy'), :confirm => 'Are you sure?', :method => :delete %></td>

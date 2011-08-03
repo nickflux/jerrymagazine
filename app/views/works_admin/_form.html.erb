@@ -23,9 +23,13 @@
     <%= f.input :work_content, :label => 'Content (old version)', :input_html => {:class => "mceEditor"} %>
   </div>
 </div>
+<%= f.input :images_lightbox, :label => "Display images in a lightbox?" %>
 <%= f.input :attachment1, :label => 'Work Image' do %>
   <%= f.file_field :attachment1 %>
 <%- end -%>
+<% if f.object.attachment1_file_name -%>
+    current image: <%= f.object.attachment1_file_name %>
+  <%- end -%>
 <%= f.input :ordinal %>
 <div id="work_pages">
   <h3>Work Pages</h3>

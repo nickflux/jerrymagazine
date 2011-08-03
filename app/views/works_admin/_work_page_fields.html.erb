@@ -4,4 +4,7 @@
   <%= wp.input :work_image, :label => 'Page Image' do %>
     <%= wp.file_field :work_image %>
   <%- end -%>
+  <% if wp.object.work_image_file_name -%>
+    current image: <%= wp.object.work_image_file_name %>
+  <%- end -%>
 </div>

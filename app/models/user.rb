@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_many :works
-  default_scope :order => 'lastname, firstname'
+  default_scope order('lastname, firstname')
   
   has_friendly_id :lastname, :use_slug => true
 
