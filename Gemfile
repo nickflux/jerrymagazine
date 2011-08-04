@@ -13,13 +13,13 @@ gem "jquery-rails", ">= 1.0.12"
 gem "haml"
 
 gem 'coffee-script'
-gem 'yui-compressor', :require => 'yui/compressor'
+#gem 'yui-compressor', :require => 'yui/compressor'
 gem 'sass'
 gem 'json' # sprocket dependency for Ruby 1.8 only
 gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 
 group :production do
-  gem "therubyracer"
+  gem 'therubyracer-heroku'
 end
 
 group :test, :development do
