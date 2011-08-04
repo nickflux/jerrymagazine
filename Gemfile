@@ -30,7 +30,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'timecop'
   gem 'fakeweb'
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'rb-fsevent'
   gem 'growl'
   gem 'guard-rspec'
   gem 'guard-livereload'#, :git => 'git://github.com/guard/guard-livereload.git'
