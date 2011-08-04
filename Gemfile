@@ -13,13 +13,13 @@ gem "jquery-rails", ">= 1.0.12"
 gem "haml"
 
 gem 'coffee-script'
-gem 'yui-compressor', :require => 'yui/compressor'
+#gem 'yui-compressor', :require => 'yui/compressor'
 gem 'sass'
 gem 'json' # sprocket dependency for Ruby 1.8 only
 gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 
 group :production do
-  gem "therubyracer"
+  gem 'therubyracer-heroku'
 end
 
 group :test, :development do
@@ -30,7 +30,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'timecop'
   gem 'fakeweb'
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'rb-fsevent'
   gem 'growl'
   gem 'guard-rspec'
   gem 'guard-livereload'#, :git => 'git://github.com/guard/guard-livereload.git'
