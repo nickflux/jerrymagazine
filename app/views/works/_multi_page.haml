@@ -1,0 +1,8 @@
+- if @work_page.work_image_file_name
+  - if @work.images_lightbox
+    - @work.work_pages.each do |work_page|
+      = link_to(image_tag(work_page.work_image.url), work_page.work_image.url, :rel => "work_lightbox", :class => "work_lightbox_image")
+  - else
+    = image_tag @work_page.work_image.url, :class => "work_image"
+- else
+  .main_work= @work_page.page_content_calc

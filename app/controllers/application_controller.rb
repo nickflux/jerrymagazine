@@ -20,7 +20,11 @@ class ApplicationController < ActionController::Base
   end
   
   def get_edition
-    @edition  = Edition.first(:conditions => ["published = ?", true], :order => 'publish_date DESC')
+    if session[:edition_id]
+      @edition  = Edition.find(session[:edition_id])
+    else
+      @edition  = Edition.where(["published = ?", true]).order('publish_date DESC').first
+    end
   end
   
 end

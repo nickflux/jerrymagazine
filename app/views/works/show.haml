@@ -1,36 +1,13 @@
+- if @page == 1 || !@page
+  %h3= @work.title_calc
+  - if !@work.epigraph.blank?
+    %p.epigraph= @work.epigraph_calc
+  %p.name= @work.user.get_fullname
+
 - if @work.work_pages.none?
-  - if @work.attachment1_file_name
-    - if @page == 1
-      %h3= @work.title_calc
-      - if !@work.epigraph.blank?
-        %p.epigraph= @work.epigraph_calc
-      %p.name= @work.user.get_fullname
-    = image_tag @work.attachment1.url, :class => "work_image"
-  - else
-    %h3= @work.title_calc
-    - if !@work.epigraph.blank?
-      %p.epigraph= @work.epigraph_calc
-    %p.name= @work.user.get_fullname
-    .main_work= @work.work_content_calc
+  = render 'works/single_page'
 - else
-  - if @work_page.work_image_file_name
-    - if @page == 1
-      %h3= @work.title_calc
-      - if !@work.epigraph.blank?
-        %p.epigraph= @work.epigraph_calc
-      %p.name= @work.user.get_fullname
-    - if @work.images_lightbox
-      - @work.work_pages.each do |work_page|
-        = link_to(image_tag(work_page.work_image.url), work_page.work_image.url, :rel => "work_lightbox", :class => "work_lightbox_image")
-    - else
-      = image_tag @work_page.work_image.url, :class => "work_image"
-  - else
-    - if @page == 1
-      %h3= @work.title_calc
-      - if !@work.epigraph.blank?
-        %p.epigraph= @work.epigraph_calc
-      %p.name= @work.user.get_fullname
-    .main_work= @work_page.page_content_calc
+  = render 'works/multi_page'
 #work_links
   = link_to 'Back', home_path, :class => "back_link"
   - if !@work.work_pages.none? && !@work.images_lightbox

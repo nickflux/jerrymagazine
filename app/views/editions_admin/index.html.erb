@@ -11,11 +11,11 @@
 
 <% @editions.each do |edition| %>
   <tr>
-    <td><%=h edition.title %></td>
-    <td><%=h edition.edition_no %></td>
-    <td><%=h edition.publish_date %></td>
-    <td><%=if edition.published then "yes" end %></td>
-    <td><%=h edition.description %></td>
+    <td><%= edition.title %></td>
+    <td><%= edition.edition_no %></td>
+    <td><%= edition.publish_date %></td>
+    <td><%= edition.published %></td>
+    <td><%= edition.description %></td>
     <td><%= link_to 'Show', editions_admin_path(:id=> edition, :action => 'show'), :class => "button" %></td>
     <td><%= link_to 'Edit', editions_admin_path(:id=> edition, :action => 'edit'), :class => "button" %></td>
     <td><%= link_to 'Destroy', editions_admin_path(:id=> edition, :action => 'destroy'), :confirm => 'Are you sure?', :method => :delete, :class => "button negative" %></td>

@@ -1,0 +1,7 @@
+- if @work.attachment1_file_name
+  - if @work.images_lightbox
+    = link_to(image_tag(@work.attachment1.url), @work.attachment1.url, :rel => "work_lightbox", :class => "work_lightbox_image")
+  - else
+    = image_tag @work.attachment1.url, :class => "work_image"
+- else
+  .main_work= @work.work_content_calc
