@@ -9,7 +9,7 @@ class Edition < ActiveRecord::Base
   has_friendly_id :title, :use_slug => true
   
   def contributors_content_calc
-    return textilize(contributors_content).html_safe
+    return textilize(contributors_content).html_safe unless contributors_content.blank?
   end
   
   def description_calc
