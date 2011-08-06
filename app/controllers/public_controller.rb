@@ -1,6 +1,9 @@
 class PublicController < ApplicationController
 
   def front_cover
+    session[:edition_id]  = nil
+    # reload edition
+    get_edition
     render :layout => 'front_cover'
   end
   

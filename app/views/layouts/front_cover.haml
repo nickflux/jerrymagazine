@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title JERRY MAGAZINE
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Syncopate:400,700"
+    = stylesheet_link_tag "/assets/front-cover"
+  %body{:id => "edition-#{@edition.edition_no}"}
+    #wrapper.container_12
+      = render "public/front_cover_#{@edition.edition_no}"
+      
+    = render 'layouts/google_analytics'

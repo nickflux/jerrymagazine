@@ -3,12 +3,16 @@
   - if !@work.epigraph.blank?
     %p.epigraph= @work.epigraph_calc
   %p.name= @work.user.get_fullname
-
+- if !@work.work_pages.none? && !@work.images_lightbox
+  #work_links_top.work_links
+    .page_links
+      - @work.work_pages.each_with_index do |work_page, index|
+        = link_to index+1, work_path(@work, :page => index+1), :class => "page_link #{if index+1 == @page then 'this_page' end}"
 - if @work.work_pages.none?
   = render 'works/single_page'
 - else
   = render 'works/multi_page'
-#work_links
+#work_links_bottom.work_links
   = link_to 'Back', home_path, :class => "back_link"
   - if !@work.work_pages.none? && !@work.images_lightbox
     .page_links

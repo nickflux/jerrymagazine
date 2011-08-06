@@ -8,7 +8,7 @@ module ApplicationHelper
   end
   
   def no_paragraph(text)
-    text.gsub(/<p>|<\/p>/, "").html_safe
+    text.gsub!(/<p>|<\/p>/, "").html_safe
   end
   
   

@@ -66,18 +66,23 @@ textarea {
   float: left;
   padding: 5px;
 }
-#preview_show .show_inline {
-  clear: both;
-  margin-bottom: 10px;
-}
-#preview_show .show_inline h4 {
-  float: left;
-  margin: 0;
-  padding: 0;
-  padding-right: 10px;
-}
-#preview_show img.work_image {
-  width: 680px;
+#preview_show {
+  .show_inline {
+    clear: both;
+    margin-bottom: 10px;
+  }
+  .show_inline h4 {
+    float: left;
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+  }
+  p.text-indent {
+    text-indent: 20px;
+  }
+  img.work_image {
+    width: 680px;
+  }
 }
 #work_pages {
   padding: 5px;

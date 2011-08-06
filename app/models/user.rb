@@ -69,6 +69,10 @@ class User < ActiveRecord::Base
     end
   end
   
+  def tagline_calc
+    return textilize(tagline).gsub!(/<p>|<\/p>/, "").html_safe unless tagline.blank?
+  end
+  
   def bio_calc
     if bio_tt.blank?
       return white_list(bio).html_safe

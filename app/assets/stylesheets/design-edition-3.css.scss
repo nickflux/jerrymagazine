@@ -186,6 +186,9 @@ h1, h2 {
       margin-bottom: 20px;
       padding-left: 50px;
     }
+    p.text-indent {
+      text-indent: 20px;
+    }
     a {
       color: $red;
     }
@@ -199,6 +202,10 @@ h1, h2 {
     a.work_lightbox_image img {
       width: 200px;
       margin-left: 10px;
+    }
+    #work_links_top {
+      margin-top: 5px;
+      margin-bottom: 8px;
     }
     div.page_links {
       float: right;

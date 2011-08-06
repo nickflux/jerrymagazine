@@ -29,7 +29,7 @@ class Work < ActiveRecord::Base
     if title_tt.blank?
       return white_list(title).html_safe
     else
-      return textilize(title_tt).html_safe
+      return textilize(title_tt).gsub!(/<p>|<\/p>/, "").html_safe
     end
   end
   

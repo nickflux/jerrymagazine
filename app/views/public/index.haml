@@ -7,9 +7,9 @@
       %h4{:rel => "#overlay_user_#{contributor.id}"}
         = contributor.get_fullname
       %p
-        = contributor.tagline
+        = contributor.tagline_calc
         &nbsp;
       .work_overlay[contributor, :overlay]
         %ul
           - contributor.get_edition_works(@edition.id).each do |work|
-            %li= link_to(no_paragraph(work.title_calc), work_path(work))
+            %li= link_to(work.title_calc, work_path(work))
