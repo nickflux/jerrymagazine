@@ -1,5 +1,6 @@
 - if @work.attachment1_file_name
   - if @work.images_lightbox
+    .lightbox_info click image to open
     = link_to(image_tag(@work.attachment1.url), @work.attachment1.url, :rel => "work_lightbox", :class => "work_lightbox_image")
   - else
     = image_tag @work.attachment1.url, :class => "work_image"

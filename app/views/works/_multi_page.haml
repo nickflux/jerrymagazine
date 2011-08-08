@@ -1,5 +1,6 @@
 - if @work_page.work_image_file_name
   - if @work.images_lightbox
+    .lightbox_info click images to open
     - @work.work_pages.each do |work_page|
       = link_to(image_tag(work_page.work_image.url), work_page.work_image.url, :rel => "work_lightbox", :class => "work_lightbox_image")
   - else
