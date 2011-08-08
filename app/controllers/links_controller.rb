@@ -1,4 +1,7 @@
 class LinksController < ApplicationController
+  
+  caches_page :index
+  
   # GET /links
   # GET /links.xml
   def index

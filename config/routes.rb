@@ -36,6 +36,7 @@ Jerrymagazine::Application.routes.draw do
   #   resources :products
   resources :links
   match '/friends-and-bastards' => 'links#index', :as => :friends_and_bastards
+  match '/works/:id/:page'  => 'works#show', :as => :work_page
   resources :works
   resources :editions
   resources :contributors

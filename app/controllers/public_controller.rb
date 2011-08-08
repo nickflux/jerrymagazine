@@ -1,5 +1,7 @@
 class PublicController < ApplicationController
 
+  caches_page :front_cover, :index, :submit, :editors_letterw
+
   def front_cover
     session[:edition_id]  = nil
     # reload edition

@@ -1,4 +1,7 @@
 class EditionsAdminController < AdminController
+  
+  cache_sweeper :edition_sweeper
+  
   # GET /admin/editions
   # GET /admin/editions.xml
   def index

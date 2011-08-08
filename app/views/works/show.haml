@@ -7,7 +7,7 @@
   #work_links_top.work_links
     .page_links
       - @work.work_pages.each_with_index do |work_page, index|
-        = link_to index+1, work_path(@work, :page => index+1), :class => "page_link #{if index+1 == @page then 'this_page' end}"
+        = link_to index+1, work_page_path(@work, :page => index+1), :class => "page_link #{if index+1 == @page then 'this_page' end}"
 - if @work.work_pages.none?
   = render 'works/single_page'
 - else
@@ -17,4 +17,4 @@
   - if !@work.work_pages.none? && !@work.images_lightbox
     .page_links
       - @work.work_pages.each_with_index do |work_page, index|
-        = link_to index+1, work_path(@work, :page => index+1), :class => "page_link #{if index+1 == @page then 'this_page' end}"
+        = link_to index+1, work_page_path(@work, :page => index+1), :class => "page_link #{if index+1 == @page then 'this_page' end}"

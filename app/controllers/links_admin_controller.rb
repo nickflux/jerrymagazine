@@ -1,5 +1,7 @@
 class LinksAdminController < AdminController
   
+  cache_sweeper :link_sweeper
+  
   # GET /admin/links
   # GET /admin/links.xml
   def index

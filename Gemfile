@@ -11,6 +11,7 @@ gem "RedCloth"
 gem "simple_form"
 gem "jquery-rails", ">= 1.0.12"
 gem "haml"
+gem 'dalli'
 
 gem 'coffee-script'
 #gem 'yui-compressor', :require => 'yui/compressor'

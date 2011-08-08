@@ -1,4 +1,7 @@
 class EditionsController < ApplicationController
+  
+  caches_page :index, :show
+  
   # GET /editions
   # GET /editions.xml
   def index

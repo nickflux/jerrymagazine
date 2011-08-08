@@ -1,4 +1,7 @@
 class WorksAdminController < AdminController
+  
+  cache_sweeper :work_sweeper
+  
   # GET /admin/works
   # GET /admin/works.xml
   def index

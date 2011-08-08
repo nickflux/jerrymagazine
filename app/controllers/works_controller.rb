@@ -1,4 +1,7 @@
 class WorksController < ApplicationController
+  
+  caches_page :show
+  
   # GET /works
   # GET /works.xml
   def index
