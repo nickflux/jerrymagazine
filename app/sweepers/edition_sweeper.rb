@@ -17,7 +17,7 @@ class EditionSweeper < ActionController::Caching::Sweeper
   def expire_cache_for(edition)
     expire_page(:controller => 'contributors', :action => 'index')
     expire_page(:controller => 'public', :action => 'editors_letter')
-    expire_page(:controller => 'public', :action => 'fron_cover')
+    expire_page(:controller => 'public', :action => 'front_cover')
     expire_page(:controller => 'public', :action => 'index')
   end
 end
