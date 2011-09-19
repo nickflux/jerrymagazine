@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
 
-  caches_page :front_cover, :index, :submit, :editors_letterw
+  caches_page :front_cover, :submit, :editors_letter
 
   def front_cover
     if session[:edition_id]
