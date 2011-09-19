@@ -3,7 +3,10 @@ class PublicController < ApplicationController
   caches_page :front_cover, :index, :submit, :editors_letterw
 
   def front_cover
-    session[:edition_id]  = nil
+    if session[:edition_id]
+      session[:edition_id]  = nil
+      expire_site_pages
+    end
     # reload edition
     get_edition
     render :layout => 'front_cover'

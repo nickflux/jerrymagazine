@@ -18,6 +18,7 @@ class EditionsController < ApplicationController
   def show
     @edition  = Edition.find(params[:id])
     session[:edition_id]  = @edition.id
+    expire_site_pages
     redirect_to home_path
   end
   
