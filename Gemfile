@@ -19,6 +19,9 @@ gem 'sass'
 gem 'json' # sprocket dependency for Ruby 1.8 only
 gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 
+group :production do
+  gem 'therubyracer'
+end
 
 group :test, :development do
   gem "rspec-rails"
