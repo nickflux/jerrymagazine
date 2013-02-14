@@ -19,9 +19,6 @@ gem 'sass'
 gem 'json' # sprocket dependency for Ruby 1.8 only
 gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git'
 
-group :production do
-  gem 'therubyracer-heroku'
-end
 
 group :test, :development do
   gem "rspec-rails"
@@ -31,8 +28,6 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'timecop'
   gem 'fakeweb'
-  gem 'rb-fsevent'
-  gem 'growl'
   gem 'guard-rspec'
   gem 'guard-livereload'#, :git => 'git://github.com/guard/guard-livereload.git'
   gem 'guard-pow'
